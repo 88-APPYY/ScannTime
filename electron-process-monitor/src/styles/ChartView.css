@@ -1,0 +1,247 @@
+/* ChartView.css - 图表组件样式 */
+
+.chart-view {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #404040;
+}
+
+.custom-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.legend-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.legend-icon {
+  font-size: 20px;
+}
+
+.legend-subtitle {
+  font-size: 12px;
+  color: #888;
+  font-weight: 300;
+}
+
+.chart-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 8px 12px;
+  background: #363636;
+  border-radius: 8px;
+  border: 1px solid #444;
+  min-width: 80px;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.chart-container {
+  flex: 1;
+  min-height: 300px;
+}
+
+/* Recharts 自定义样式 */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #404040;
+}
+
+.recharts-text {
+  fill: #888;
+  font-size: 12px;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.custom-tooltip {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.tooltip-header {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #555;
+}
+
+.process-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tooltip-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.tooltip-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.tooltip-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.chart-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #404040;
+}
+
+.color-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.color-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* 加载状态 */
+.chart-view.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-view.loading .loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.chart-view.loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #404040;
+  border-top: 4px solid #4285f4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.chart-view.loading p {
+  color: #888;
+  font-size: 14px;
+}
+
+/* 空状态 */
+.chart-view.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-view.empty .empty-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.chart-view.empty .empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.chart-view.empty p {
+  color: #888;
+  margin-bottom: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .chart-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .chart-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .stat-item {
+    flex: 1;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .color-legend {
+    gap: 12px;
+  }
+  
+  .legend-item {
+    flex: 1;
+    justify-content: center;
+  }
+}
